@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BOOK COFFEE</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body style="background-color: rgba(25, 25, 33, 0.97);">
+    
+    <!-- NAVBAR -->
+  <div class="row">
+        <nav class="navbar navbar-dark bg-dark fixed-top"style="height: 70px;">
+            <div class="container-fluid">
+
+                <!-- NOME NAVBAR  -->
+                <a class="navbar-brand" href="#">Book Coffee</a>
+
+                <!-- BOTÃO NAVBAR  -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- DIV NAVBAR ITENS  -->
+                <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
+                    
+                    <!-- TITULO PAG CADASTRO -->
+                    <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">Faça seu login para acessar</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+
+                    <!-- DIV NAVBAR  -->
+                    <div class="offcanvas-body">
+                        
+                        <!-- LISTA NAVBAR  -->
+                        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                        <li class="nav-item">
+
+                            <!-- NOME LISTA NAVBAR  -->
+                            <h3>Administrador</h3>
+
+                            <!-- USUARIO NAVBAR  -->
+                            <input type="text" placeholder="Login" name="login" id="login">
+
+                            <!-- SENHA NAVBAR  -->
+                            <input type="password" placeholder="Senha" name="senha" id="password">
+
+                            <!-- BOTÃO ENTRAR CADASTRO -->
+                            <input class="entrar" type="submit" value="Entrar" onclick="login()"><br>
+
+                            <!-- MENSAGEM CADASTRO  -->
+                            <span id="message"></span>
+                        </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </div>    
+    <!-- FINAL NAVBAR  -->
+    <br>
+    <br>
+    <!-- CAROUSSEL  -->
+
+    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
+         
+        <!-- BOTÕES CAROUSSEL  -->
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+
+         <!-- IMAGENS CAROUSSEL  -->
+        <div class="carousel-inner">
+
+          <div class="carousel-item active">
+            <img src="https://www.mundoboaforma.com.br/wp-content/uploads/2021/03/Cafe-puro.jpg" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="https://cafe.esp.br/wp-content/uploads/2020/06/Loja-de-Caf%C3%A9-especial-1200x640.jpg" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="https://www.mundoboaforma.com.br/wp-content/uploads/2020/09/Cafe-1.jpg" class="d-block w-100" alt="...">
+          </div>
+
+        </div>
+
+        <!-- BOTÕES CAROUSSEL  -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+    
+    </div>
+    <!-- FINAL CAROUSSEL -->
+
+    <!-- MESAS DISPONIVEIS/OCUPADAS -->
+    <div class="container-fluid" id="mesas">
+        <center>
+        <div class="row">
+            
+            <!-- MESAS 01 -->
+            <div class="col-sm">
+                <div class="card-body">
+                    <h5 class="card-title">Mesa 01</h5>
+                    <h1><span class="vmesa" id="v_mesa01">LIVRE</span></h1>
+                    <input type="button" class="btn btn-primary" name="01" id="nmesa" value="Selecionar" onclick="mesa01()" ></input>
+                </div>
+            </div>
+
+            <!-- MESAS 02 -->
+            <div class="col-sm">
+                <div class="card-body">
+                    <h5 class="card-title">Mesa 02</h5>
+                    <h1><span class="vmesa" id="v_mesa02">LIVRE</span></h1>
+                    <input type="button" class="btn btn-primary" name="02" id="nmesa" value="Selecionar" ></input>
+                </div>
+            </div>
+
+            <!-- MESAS 03 -->
+            <div class="col-sm">
+                <div class="card-body">
+                    <h5 class="card-title">Mesa 03</h5>
+                    <h1><span class="vmesa" id="v_mesa03">LIVRE</span></h1>
+                    <input type="button" class="btn btn-primary" name="03" id="nmesa" value="Selecionar" ></input>
+                </div>
+            </div>
+
+        </div>    
+        <div class="row">    
+            <!-- MESAS 04 -->
+            <div class="col-sm">
+                <div class="card-body">
+                    <h5 class="card-title">Mesa 04</h5>
+                    <h1><span class="vmesa" id="v_mesa04">LIVRE</span></h1>
+                    <input type="button" class="btn btn-primary" name="04" id="nmesa" value="Selecionar" ></input>
+                </div>
+
+            </div>
+        
+            <!-- MESAS 05 -->
+            <div class="col-sm">
+
+                <div class="card-body">
+                    <h5 class="card-title">Mesa 05</h5>
+                    <h1><span class="vmesa" id="v_mesa05">LIVRE</span></h1>
+                    <input type="button" class="btn btn-primary" name="05" id="nmesa" value="Selecionar" onclick="mesa05()"></input>
+                </div>
+            </div>
+        
+            <!-- MESAS 06 -->
+            <div class="col-sm">
+                <div class="card-body">
+                    <h5 class="card-title">Mesa 06</h5>
+                    <h1><span class="vmesa" id="v_mesa06">LIVRE</span></h1>
+                    <input type="button" class="btn btn-primary" name="06" id="nmesa" value="Selecionar" onclick="mesa06()"></input>
+                </div>
+
+            </div>
+        </div>
+        </center>
+    </div>
+    <!-- FIM MESAS -->
+
+    <!-- CLIENTES -->
+    <center>
+    <div id="clientes">
+        <div class="col-9 ficha">
+            <div class="row">
+                <!-- BOTÃO VOLTAR -->
+                <div class="col-2">
+                    <button type="button" class="btn-close btn-close-white" aria-label="Close"></button>
+                </div>
+                <!-- DADOS CLIENTES -->
+                <div class="col-8">
+                    <h1>Pedido da mesa <span id="nmmesa"></span></h1>
+
+                    <!-- NOME CLIENTE -->
+                    <label for="nome_cliente">Nome do Cliente:</label>
+                    <input type="text" name="nome_cliente" class="form-control"required id="nome">
+
+                    <!-- TELEFONE CLIENTE -->
+                    <label for="telefone_cliente01">Telefone para Contato:</label>
+                    <input type="text" name="telefone_cliente" class="form-control" required>
+                </div>    
+            </div>   
+            <div class="row">
+                <div class="col-12">  
+                    <!-- BOTÃO ACESSAR CADASTRO -->
+                    <button type="button" class="btn btn-primary"onclick="cardapio()"style="width: 200px; height: 50px;margin-top: 10px;">Abrir Cardapio</button>
+                </div>  
+            </div>
+                    
+                
+                
+            </div>
+        </div>
+    </div> 
+    </center> 
+    <!-- FIM PAG CLIENTES -->
+
+    <!-- CARDAPIO --> 
+    <div class="cardapio" id="cardapio">
+        <div class="container text-center">
+            <div class="row">
+                <div class="col-12">
+                    <!-- Cafés--> 
+                    <h1 class="title">CAFÉS</h1><br>
+                    <div class="cafes">
+
+                        <!-- Café Expresso-->
+
+                        <div class="card" style="width: 15rem;">
+                            <img src="https://www.proteste.org.br/institucional/-/media/lobbyandpressproteste/images/imprensa/press-release/2016/pre%C3%A7o%20do%20caf%C3%A9%20expresso%20tem%20varia%C3%A7%C3%A3o%20de%20at%C3%A9%20115/cafe-expresso.jpg?rev=a44d8113-c1e5-4c79-bd48-04cc5ba6acf4&h=330&w=500&la=pt-BR&hash=37F82218B923B282BB12E9AF7E0DF6B0" class="card-img-top" alt="...">
+                            <h5 class="card-title">Café Expresso</h5>
+                            <h1 class="card-text">R$6,00</h1>
+                            <div class="linhap">
+                                <input type="button" class="btn btn-dark" value="-" onclick="menosexpresso_01()">
+                                <span id="qtd_expresso01">0</span>
+                                <input type="button" class="btn btn-dark" value="+" onclick="maisexpresso_01()">
+                            </div>
+                        </div>
+
+
+                        <!-- Cappuccino -->
+
+                        <div class="card" style="width: 15rem;">
+                            <img src="https://noticias.esquemaimoveis.com.br/wp-content/uploads/2020/07/cafe-4-500x330.jpg" class="card-img-top" alt="...">
+                            <h5 class="card-title">Cappuccino</h5>
+                            <h1 class="card-text">R$7,90</h1>
+                            <div class="linhap">
+                                <input type="button" class="btn btn-dark" value="-" onclick="menoscappuccino_01()">
+                                <span id="qtd_cappuccino01">0</span>
+                                <input type="button" class="btn btn-dark" value="+" onclick="maiscappuccino_01()">  
+                            </div>
+                        </div>
+                    
+                        <!-- Café Mocha -->
+
+                        <div class="card" style="width: 15rem;">
+                            <img src="http://dechocolate.net/wp-content/uploads/2014/01/cafe-moka.jpg" class="card-img-top" alt="...">
+                            <h5 class="card-title">Café Mocha</h5>
+                            <h1 class="card-text">R$6,50</h1>
+                            <div class="linhap">
+                                <input type="button" class="btn btn-dark" value="-" onclick="menosmocha_01()">
+                                <span id="qtd_mocha01">0</span>
+                                <input type="button" class="btn btn-dark" value="+" onclick="maismocha_01()">
+                            </div>
+                        </div>
+                    
+                        <!-- Café Duplo -->
+
+                        <div class="card" style="width: 15rem;">
+                            <img src="https://cafemaniacos.com.br/wp-content/uploads/2019/01/expresso-dupro-variacao-do-cafe.jpg" class="card-img-top" alt="..." style="width: 235,8px;height: 160px;">
+                            <h5 class="card-title">Café Duplo</h5>
+                            <h1 class="card-text">R$8,90</h1>
+                            <div class="linhap">
+                                <input type="button" class="btn btn-dark" value="-" onclick="menosduplo_01()">
+                                <span id="qtd_duplo01">0</span>
+                                <input type="button" class="btn btn-dark" value="+" onclick="maisduplo_01()">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12">
+                    <!-- Bebidas -->
+                    <h1 class="title">BEBIDAS</h1><br>
+                    <div class="bebidas">
+
+                        <!-- Água -->
+
+                        <div class="card" style="width: 15rem;">
+                            <img src="https://riomarkennedyonline.com.br/riomarkennedyonline/2020/07/agua_sem_rotulo_kina_do_feij%C3%A3o_verde_riomar_kennedy.jpg" class="card-img-top" alt="...">
+                            <h5 class="card-title">Garrafa de Água</h5>
+                            <h1 class="card-text">R$4,00</h1>
+                            <div class="linhap">
+                                <input type="button" class="btn btn-dark" value="-" onclick="menosagua_01()">
+                                <span id="qtd_agua01">0</span>
+                                <input type="button" class="btn btn-dark" value="+" onclick="maisagua_01()">
+                            </div>
+                        </div>
+                        
+                        <!-- Refrigerante -->
+
+                        <div class="card" style="width: 15rem;">
+                            <img src="https://hotdogbrasil.com.br/wp-content/uploads/2019/08/refris.png" class="card-img-top" alt="...">
+                            <h5 class="card-title">Lata de Refrigerante</h5>
+                            <h1 class="card-text">R$5,50</h1>
+                            <div class="linhap">
+                                <input type="button" class="btn btn-dark" value="-" onclick="menosrefri_01()">
+                                <span id="qtd_refri01">0</span>
+                                <input type="button" class="btn btn-dark" value="+" onclick="maisrefri_01()">
+                                
+                            </div>
+                        </div>
+                        
+                        
+                        <!-- Chá Matte  -->
+
+                        <div class="card" style="width: 15rem;">
+                            <img src="https://farmaciaindiana.vteximg.com.br/arquivos/ids/237788/7891098040886.jpg?v=637533976968570000" class="card-img-top" alt="...">
+                            <h5 class="card-title">Chá Matte</h5>
+                            <h1 class="card-text">R$6,00</h1>
+                            <div class="linhap">
+                                <input type="button" class="btn btn-dark" value="-" onclick="menoscha_01()">
+                                <span id="qtd_cha01">0</span>
+                                <input type="button" class="btn btn-dark" value="+" onclick="maischa_01()">  
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+                
+                <div class="col-12">
+                    <!-- Bolos -->
+                    <h1 class="title">BOLOS</h1><br> 
+                    <div class="bolos">
+
+                        <!-- Bolo de Chocolate  -->
+                        <div class="card" style="width: 15rem;">
+                            <img src="https://bambini.com.br/wp-content/uploads/2016/01/bolo_chocolate_Bambini-357.png" class="card-img-top" alt="...">
+                            <h5 class="card-title">Bolo de Chocolate</h5>
+                            <h1 class="card-text">R$14,50</h1>
+                            <div class="linhap">
+                                <input type="button" class="btn btn-dark" value="-" onclick="menoschocolate_01()">
+                                <span id="qtd_bchocolate01">0</span>
+                                <input type="button" class="btn btn-dark" value="+" onclick="maischocolate_01()">
+                            </div>
+                        </div>
+                        
+
+
+                        <!--  Bolo de Cenoura  -->
+
+                        <div class="card" style="width: 15rem;">
+                            <img src="https://receitas.receitadesabor.com.br/upload/receitas/bolo-de-cenoura183316.jpg" class="card-img-top" alt="..." style="height: 210px;">
+                            <h5 class="card-title">Bolo de Cenoura</h5>
+                            <h1 class="card-text">R$15,00</h1>
+                            <div class="linhap">
+                                <input type="button" class="btn btn-dark" value="-" onclick="menoscenoura_01()">
+                                <span id="qtd_cenoura01">0</span>
+                                <input type="button" class="btn btn-dark" value="+" onclick="maiscenoura_01()">
+                            </div>"
+                        </div>
+                        
+
+
+                        <!-- Bolo de Limão  -->
+
+                        <div class="card" style="width: 15rem;">
+                            <img src="https://cadareceita.com.br/wp-content/uploads/2020/08/bolodelimao-cadareceita-3-500x500.jpg" class="card-img-top" alt="...">
+                            <h5 class="card-title">Bolo de Limão </h5>
+                            <h1 class="card-text">R$13,90</h1>
+                            <div class="linhap">
+                                <input type="button" class="btn btn-dark" value="-" onclick="menoslimao_01()">
+                                <span id="qtd_limao01">0</span>
+                                <input type="button" class="btn btn-dark" value="+" onclick="maislimao_01()">
+                            </div>
+                        </div>
+                    
+
+
+                        <!-- Bolo de Sensação -->
+
+                        <div class="card" style="width: 15rem;">
+                            <img src="https://receitatodahora.com.br/wp-content/uploads/2018/01/bolo-de-aniversario-sensacao-500x500.jpg" class="card-img-top" alt="...">
+                            <h5 class="card-title">Bolo de Sensação</h5>
+                            <h1 class="card-text">R$17,95</h1>
+                            <div class="linhap">
+                                <input type="button" class="btn btn-dark" value="-" onclick="menossensacao_01()">
+                                <span id="qtd_sensacao01">0</span>
+                                <input type="button" class="btn btn-dark" value="+" onclick="maissensacao_01()">   
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <h1 class="title">SALGADOS</h1><br>
+                <div class="col-12">
+                    <!-- Salgados -->
+                    
+                    <div class="salgados">
+
+                        <!-- Coxinha -->
+                        <div class="card" style="width: 15rem;">
+                            <img src="https://riomarrecife.com.br/recife/2020/08/Combo-Cinco-Coxinhas-Sweets.jpg" class="card-img-top" alt="...">
+                            <h5 class="card-title">Coxinha</h5>
+                            <h1 class="card-text">R$5,00</h1>
+                            <div class="linhap">
+                                <input type="button" class="btn btn-dark" value="-" onclick="menoscoxinha_01()">
+                                <span id="qtd_coxinha01">0</span>
+                                <input type="button" class="btn btn-dark" value="+" onclick="maiscoxinha_01()">
+                            </div>
+                        </div>
+
+                        <!-- Cigarrete -->
+
+                        <div class="card" style="width: 15rem;">
+                            <img src="https://d30g3jwhbbo6vl.cloudfront.net/Custom/Content/Products/04/14/0414__m1_637770875022034635.png" class="card-img-top" alt="...">
+                            <h5 class="card-title">Cigarrete</h5>
+                            <h1 class="card-text">R$5,50</h1>
+                            <div class="linhap">
+                                <input type="button" class="btn btn-dark" value="-" onclick="menoscigarrete_01()">
+                                <span id="qtd_cigarrete01">0</span>
+                                <input type="button" class="btn btn-dark" value="+" onclick="maiscigarrete_01()"> 
+                            </div>
+                        </div>
+
+                        <!-- Quibe -->
+
+                        <div class="card" style="width: 15rem;">
+                            <img src="https://storage.googleapis.com/domain-images/fd651f9a-c478-40b4-960d-30d3d3ef0ef0/products/gallery_88fe493e-98ee-464c-9892-7c4677d4432b.jpg" class="card-img-top" alt="...">
+                            <h5 class="card-title">Quibe</h5>
+                            <h1 class="card-text">R$6,00</h1>
+                            <div class="linhap">
+                                <input type="button" class="btn btn-dark" value="-" onclick="menosquibe_01()">
+                                <span id="qtd_quibe01">0</span>
+                                <input type="button" class="btn btn-dark" value="+" onclick="maisquibe_01()">
+                            </div>
+                        </div>
+                    </div>
+                </div>    
+                <div class="col-6"></div>
+                    <div class="salgados">
+
+                        <!-- Enroladinho -->
+
+                        <div class="card" style="width: 15rem;">
+                            <img src="http://shopblob.blob.core.windows.net/1204-produtoimagem/grd-enroladinho%20misto%20queijo%20presunto.png" class="card-img-top" alt="...">
+                            <h5 class="card-title">Enroladinho</h5>
+                            <h1 class="card-text">R$4,50</h1>
+                            <div class="linhap">
+                                <input type="button" class="btn btn-dark" value="-" onclick="menosenroladinho_01()">
+                                <span id="qtd_enroladinho01">0</span>
+                                <input type="button" class="btn btn-dark" value="+" onclick="maisenroladinho_01()">
+                                
+                            </div>
+                        </div>
+
+                        <!-- Hamburguer Assado -->
+
+                        <div class="card" style="width: 15rem;">
+                            <img src="https://receitatodahora.com.br/wp-content/uploads/2022/05/hamburgao1-500x500.jpg" class="card-img-top" alt="...">
+                            <h5 class="card-title">Hamburguer Assado</h5>
+                            <h1 class="card-text">R$6,00</h1>
+                            <div class="linhap">
+                                <input type="button" class="btn btn-dark" value="-" onclick="menoshamburguer_01()">
+                                <span id="qtd_hamburguer01">0</span>
+                                <input type="button" class="btn btn-dark" value="+" onclick="maishamburguer_01()">
+                            </div>
+                        </div>
+                    </div>
+               </div>
+            </div>
+            <!-- BOTÃO MODAL -->
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"style="height: 50px; width: 100%;" >
+                VER COMANDA
+            </button>
+            
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                    ...
+                    </div>
+                    <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>    
+    </div>                
+
+
+
+
+
+
+
+
+
+    <script src="script.js"></script>        
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js" integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK" crossorigin="anonymous"></script>
+</body>
+</html>

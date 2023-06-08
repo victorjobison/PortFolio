@@ -1,0 +1,67 @@
+#res2, #pagina2, #pagina3_m01,#pagina3_m02,#pagina3_m03,#pagina3_m04,#pagina3_m05,#pagina3_m06, #pagina4, #cardp1, #cardp2, #cardp3, #cardp4, #cardp5, #cardp6{
+    display: none;
+    padding: auto;
+    margin-top: 50px;
+    align-items: center;
+}
+
+
+.card{
+    display: inline-block;
+    margin: 15px;
+
+}
+
+.card-body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    margin-top: 50px; 
+}
+.cardz{
+    width: 1000px;
+}
+
+.title{
+    margin: 20px 0px;
+    background-color: rgba(128, 128, 128, 0.397);
+    padding: 20px;
+    border-radius:200px ;
+}
+
+.nav-item{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.ficha{
+    padding: 40px;
+    background-color: rgba(56, 41, 41, 0.205);
+    margin-top: 40px;
+    margin-left: 20px;
+    border-radius: 30px;
+    align-items: center;
+}
+
+.ficha label{
+    margin-left: 30px;
+}
+
+.divpreco{
+    background-color: rgba(50, 50, 194, 0.521);
+    margin-top: 40px;
+    border-radius: 20px;
+    margin-left: 10px;
+    padding: 20px;
+}
+
+.vmesa{
+    color: green;
+
+}
+.btn-close{
+    margin-right: 220px;
+    margin-bottom: 10px;
+}

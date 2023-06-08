@@ -1,0 +1,83 @@
+#mesas,#clientes,#clientes,#cardapio{
+    display: none;
+    padding: auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    align-items: center;
+}
+
+.nav-item{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.entrar{
+
+    height: 30px;
+    width: 90px;
+    margin-top: 10px;
+    border-radius: 15px;
+    border: none;
+    text-align: center;
+}
+
+.card-body{
+    background-image: url(https://st2.depositphotos.com/2791409/8121/i/450/depositphotos_81218166-stock-photo-coffee-backgrond.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 15rem; 
+    height: 18rem; 
+    text-align: center;
+    margin: 20px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    margin-top: 50px; 
+    color: white;
+}
+
+.card-title{
+
+    margin-top: 50px;
+    text-align: center;
+  
+}
+
+.title{
+    margin: 20px 0px;
+    background-color: rgba(128, 128, 128, 0.397);
+    padding: 20px;
+    border-radius:200px ;
+    text-align: center;
+    color: white;
+}
+.btn-close{
+    margin-right: 220px;
+    margin-bottom: 10px;
+}
+
+.ficha{
+    padding: 40px;
+    background-color:  rgba(45, 45, 50, 0.97);
+    margin-top: 40px;
+    margin-left: 20px;
+    border-radius: 30px;
+    align-items: center;
+    color: white;
+    border: solid;
+    border-color: white;
+    background-image: url(https://st2.depositphotos.com/2791409/8121/i/450/depositphotos_81218166-stock-photo-coffee-backgrond.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.card{
+    display: inline-block;
+    margin: 15px;
+    width: 15rem; 
+    height: 28rem; 
+    background-color: white;
+
+}
